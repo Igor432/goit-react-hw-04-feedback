@@ -23,7 +23,7 @@ onLeaveFeedback = (key) => {
         return {[key]: prevState[key] + 1}
   }, this.countTotalFeedback)
   this.countPositiveFeedbackPercentage()
-  console.log(key);
+  console.log(this.PositiveFeedbackPercentage);
 
   };
 

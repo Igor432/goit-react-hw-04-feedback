@@ -1,6 +1,8 @@
 
 
-const Statistics = ({good, neutral, bad, total, PositiveFeedbackPercentage}) => {
+const Statistics = ({good, neutral, bad, total, positivePercentage}) => {
+
+    console.log(total)
 
 /*
     const {good} = this.state
@@ -21,7 +23,7 @@ return (
     <li class="statistics-item">Neutral: {neutral}</li>
     <li class="statistics-item">Bad: {bad}</li>
     <li class="statistics-item" >Total: {total}</li>
-    <li class="statistics-item">Positive Feedback: {Math.floor(PositiveFeedbackPercentage)}%</li>
+    <li class="statistics-item">Positive Feedback: {Math.floor(positivePercentage)}%</li>
 
 
     </div>
