@@ -2,7 +2,7 @@
 
 const Statistics = ({good, neutral, bad, total, positivePercentage}) => {
 
-    console.log(total)
+ 
 
 return (
 

@@ -1,8 +1,8 @@
 
 
-const FeedbackOptions = ({options, onLeaveFeedback}) => {
+const FeedbackOptions = ({ addBad, addGood, addNeutral}) => {
 
-const optika = Object.keys(options)
+
 
 
 
@@ -12,11 +12,13 @@ return (
         <div>
         <p>Please, leave feedback</p>
 
-{optika.map(optio => (
-        <button class="feedback-button" type="button" key={optio}  onClick={() => onLeaveFeedback(optio)}>{optio}</button>
-      
 
-        ))}
+        <button class="feedback-button" type="button" onClick={addGood}>Good</button>
+        <button class="feedback-button" type="button" onClick={addNeutral}>Neutral</button>
+        <button class="feedback-button" type="button" onClick={addBad}>Bad</button>
+
+
+        
 
         
             </div>
