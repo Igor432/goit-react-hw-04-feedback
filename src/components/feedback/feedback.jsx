@@ -16,28 +16,26 @@ const [positive, setPositive] = useState(0)
 
 const addGood = () => {
   setGood(state => state +1 )
-  countPositiveFeedbackPercentage()
+  
   };
 
 
 const addNeutral = () => {
   setNeutral(state => state +1 )
-  countPositiveFeedbackPercentage()
+
   };
 
 
 const addBad = () => {
   setBad(state => state + 1 )
-  countPositiveFeedbackPercentage()
+
 
   }
 
  
   
 
-     const countPositiveFeedbackPercentage = () => {
-       setPositive(state => 100 / total * good)
-      }
+    
 
       
 
@@ -46,9 +44,15 @@ const addBad = () => {
           setTotal(state => good + neutral + bad)
         
            }     
-           
+
+           const countPositiveFeedbackPercentage = () => {
+            setPositive(state => 100 / total * good)
+           }
+
+
+           countPositiveFeedbackPercentage()
         countTotalFeedback()
-      }, [good, bad, neutral])
+      }, [good, bad, neutral, total])
 
 
 
