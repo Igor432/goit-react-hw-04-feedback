@@ -4,16 +4,6 @@ const Statistics = ({good, neutral, bad, total, positivePercentage}) => {
 
     console.log(total)
 
-/*
-    const {good} = this.state
-    const {neutral} = this.state
-    const {bad} = this.state
-    const total = this.totalCount
-    const percentage = this.PositiveFeedbackPercentage
-
-*/
-
-
 return (
 
     <div>

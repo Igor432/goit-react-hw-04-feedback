@@ -12,7 +12,7 @@ class Feedback extends Component {
       }
 
      
-totalCount = 0
+totalCount = 0;
 PositiveFeedbackPercentage = 0;
 
 
@@ -29,27 +29,6 @@ onLeaveFeedback = (key) => {
 
 
 
-/*
-
-      addNeutral = () => {
-       
-        this.setState(prevState => {
-            return {neutral: prevState.neutral + 1}
-      }, this.countTotalFeedback)
-      this.countPositiveFeedbackPercentage()
-
-      };
-
-      addBad = () => {
-        this.setState(prevState => {
-            return {bad: prevState.bad + 1}
-         
-      }, this.countTotalFeedback)
-      this.countPositiveFeedbackPercentage()
-
-      };
-*/
-    
       countTotalFeedback() {
      this.totalCount = this.state.good + this.state.neutral + this.state.bad
 
