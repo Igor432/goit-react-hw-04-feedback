@@ -19,8 +19,10 @@ const FeedbackOptions = ({ addBad, addGood, addNeutral }) => {
 };
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.array,
-  onLeaveFeedback: PropTypes.func,
+  addGood:PropTypes.func.isRequired,
+  addNeutral:PropTypes.func.isRequired,
+  addBad: PropTypes.func.isRequired,
+
 };
 
 export default FeedbackOptions;

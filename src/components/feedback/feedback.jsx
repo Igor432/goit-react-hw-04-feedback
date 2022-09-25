@@ -3,7 +3,8 @@ import FeedbackOptions from './FeedbackOptions';
 import Statistics from './Statistics';
 import { useState } from 'react';
 import { useEffect } from 'react';
-var PropTypes = require('prop-types'); // ES5 with npm
+import Notification from './Notification';
+import Section from './Section';
 
 function Feedback() {
   const [good, setGood] = useState(0);
@@ -44,21 +45,19 @@ function Feedback() {
         addNeutral={addNeutral}
         addBad={addBad}
       />
-      <Statistics
-        good={good}
-        neutral={neutral}
-        bad={bad}
-        total={total}
-        positivePercentage={positive}
-      />
+      {total === 0 ? <Notification/> : (
+        <Section title="Statistics">
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={total}
+            positivePercentage={positive}
+          />
+        </Section>
+      )}
     </div>
   );
 }
-
-Feedback.propTypes = {
-  good: PropTypes.number,
-  neutral: PropTypes.number,
-  bad: PropTypes.number,
-};
 
 export default Feedback;

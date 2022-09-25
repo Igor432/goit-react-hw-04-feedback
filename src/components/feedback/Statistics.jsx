@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'; // ES6
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
     <div>
-      <p>Statistics</p>
 
       <li class="statistics-item">Good: {good}</li>
       <li class="statistics-item">Neutral: {neutral}</li>
@@ -17,8 +16,11 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
 };
 
 Statistics.propTypes = {
-  total: PropTypes.number,
-  positivePercentage: PropTypes.number,
+  good:PropTypes.number.isRequired,
+  neutral:PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };
 
 export default Statistics;
