@@ -1,9 +1,9 @@
 import Feedback from "./feedback/Feedback.jsx";
-
+import style from '../components/feedback/feedback.module.css'
 
 export const App = () => {
   return (
-    <div
+    <div className={style.main}
       style={{
         height: '100vh',
         display: 'flex',

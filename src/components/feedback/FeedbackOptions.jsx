@@ -1,17 +1,19 @@
-var PropTypes = require('prop-types'); // ES5 with npm
+import style from '../feedback/feedback.module.css';
+import PropTypes from 'prop-types'; // ES6
+
 
 const FeedbackOptions = ({ addBad, addGood, addNeutral }) => {
   return (
     <div>
       <p>Please, leave feedback</p>
 
-      <button class="feedback-button" type="button" onClick={addGood}>
+      <button className={style.feedback_button}  type="button" onClick={addGood}>
         Good
       </button>
-      <button class="feedback-button" type="button" onClick={addNeutral}>
+      <button className={style.feedback_button} type="button" onClick={addNeutral}>
         Neutral
       </button>
-      <button class="feedback-button" type="button" onClick={addBad}>
+      <button className={style.feedback_button}  type="button" onClick={addBad}>
         Bad
       </button>
     </div>

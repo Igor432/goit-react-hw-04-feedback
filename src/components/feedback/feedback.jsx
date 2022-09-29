@@ -1,4 +1,4 @@
-import '../feedback/feedback.css';
+import '../feedback/feedback.module.css';
 import FeedbackOptions from './FeedbackOptions';
 import Statistics from './Statistics';
 import { useState } from 'react';
