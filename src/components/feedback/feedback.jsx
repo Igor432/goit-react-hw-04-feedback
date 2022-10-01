@@ -2,7 +2,6 @@ import '../feedback/feedback.module.css';
 import FeedbackOptions from './FeedbackOptions';
 import Statistics from './Statistics';
 import { useState } from 'react';
-import { useEffect } from 'react';
 import Notification from './Notification';
 import Section from './Section';
 
@@ -10,8 +9,18 @@ function Feedback() {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
-  const [total, setTotal] = useState(0);
-  const [positive, setPositive] = useState(0);
+
+  
+  const countTotalFeedback = () => {
+    return good + neutral + bad
+
+  };
+  
+
+  const countPositiveFeedbackPercentage = total => {
+    const positive = (100 / total) * good;
+return positive
+  };
 
   const addGood = () => {
     setGood(state => state + 1);
@@ -25,18 +34,8 @@ function Feedback() {
     setBad(state => state + 1);
   };
 
-  useEffect(() => {
-    const countTotalFeedback = () => {
-      setTotal(state => good + neutral + bad);
-    };
-
-    const countPositiveFeedbackPercentage = () => {
-      setPositive(state => (100 / total) * good);
-    };
-
-    countPositiveFeedbackPercentage();
-    countTotalFeedback();
-  }, [good, bad, neutral, total]);
+const total = countTotalFeedback()
+const positive = countPositiveFeedbackPercentage(total)
 
   return (
     <div>
@@ -45,7 +44,9 @@ function Feedback() {
         addNeutral={addNeutral}
         addBad={addBad}
       />
-      {total === 0 ? <Notification/> : (
+      {total === 0 ? (
+        <Notification message="Please, leave feedback" />
+      ) : (
         <Section title="Statistics">
           <Statistics
             good={good}

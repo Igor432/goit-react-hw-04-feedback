@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'; // ES6
 const FeedbackOptions = ({ addBad, addGood, addNeutral }) => {
   return (
     <div>
-      <p>Please, leave feedback</p>
+  
 
       <button className={style.feedback_button}  type="button" onClick={addGood}>
         Good
